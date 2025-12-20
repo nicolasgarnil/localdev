@@ -1,0 +1,25 @@
+[user]
+        name = Nicolas Garnil
+        email = negarnil@gmail.com
+[alias]
+        st = status
+        br = branch
+        co = checkout
+        ano = commit --amend --no-edit
+[core]
+        excludesfile = ~/.gitignore
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
+[pager]
+        branch = false
+[pull]
+        rebase = false
+[filter "lfs"]
+        required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+[init]
+        defaultBranch = main
