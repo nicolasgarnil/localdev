@@ -5,8 +5,8 @@ Personal local development configuration, versioned so it can be reproduced on a
 ## Contents
 
 - `.claude/statusline-command.sh` - Claude Code status line script; prints the model name and total token usage (e.g. `Opus 4.8 · 10.2k`).
-- `install.sh` - symlinks the versioned config files into their expected locations under `$HOME`; idempotent, safe to re-run.
-- `.gitconfig` - Git configuration.
+- `install.sh` - symlinks the versioned config files into their expected locations under `$HOME`, then prompts for the Git user name and email; idempotent, safe to re-run.
+- `.gitconfig` - shared Git configuration (aliases, colors, defaults). Git identity is not versioned here: this file includes `~/.gitconfig.local`, which `install.sh` populates per machine.
 
 ## Setup on a new machine
 

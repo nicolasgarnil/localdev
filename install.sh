@@ -13,3 +13,18 @@ link() {
 
 link "$REPO_DIR/.claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
 link "$REPO_DIR/.gitconfig" "$HOME/.gitconfig"
+
+# Git identity is machine-local (not versioned): the shared .gitconfig includes
+# ~/.gitconfig.local. Prompt for it, offering the existing value as the default.
+local_config="$HOME/.gitconfig.local"
+current_name=$(git config --file "$local_config" user.name 2>/dev/null || true)
+current_email=$(git config --file "$local_config" user.email 2>/dev/null || true)
+
+read -rp "Git user name${current_name:+ [$current_name]}: " name
+name=${name:-$current_name}
+read -rp "Git user email${current_email:+ [$current_email]}: " email
+email=${email:-$current_email}
+
+git config --file "$local_config" user.name "$name"
+git config --file "$local_config" user.email "$email"
+echo "wrote git identity to $local_config"
