@@ -1,0 +1,6 @@
+# Copy to ~/.zshrc.local and fill in real values (install.sh does this automatically).
+
+export LANGFUSE_PUBLIC_KEY="REPLACE_ME"
+export LANGFUSE_SECRET_KEY="REPLACE_ME"
+export NEW_RELIC_API_KEY="REPLACE_ME"
+export LANGFUSE_HOST="REPLACE_ME"

@@ -13,6 +13,15 @@ link() {
 
 link "$REPO_DIR/.claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
 link "$REPO_DIR/.gitconfig" "$HOME/.gitconfig"
+link "$REPO_DIR/.zshrc" "$HOME/.zshrc"
+
+# Machine-local shell secrets are not versioned: .zshrc sources ~/.zshrc.local.
+# Seed it from the template on first install; never overwrite real values.
+if [ ! -f "$HOME/.zshrc.local" ]; then
+  cp "$REPO_DIR/.zshrc.local.example" "$HOME/.zshrc.local"
+  chmod 600 "$HOME/.zshrc.local"
+  echo "created $HOME/.zshrc.local from template - fill in real values"
+fi
 
 # Git identity is machine-local (not versioned): the shared .gitconfig includes
 # ~/.gitconfig.local. Prompt for it, offering the existing value as the default.
