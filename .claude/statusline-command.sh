@@ -16,4 +16,9 @@ tokens_fmt=$(awk -v n="$total_tokens" 'BEGIN {
   }
 }')
 
+# Past ~100k tokens model precision starts to degrade noticeably; flag it in yellow.
+if [ "$total_tokens" -ge 100000 ]; then
+  tokens_fmt=$(printf '\033[33m%s\033[0m' "$tokens_fmt")
+fi
+
 printf "%s \xc2\xb7 %s" "$model" "$tokens_fmt"
