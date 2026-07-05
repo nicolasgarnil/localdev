@@ -113,6 +113,4 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# New Relic user key (newrelic-dashboards push)
-
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
