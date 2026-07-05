@@ -12,6 +12,7 @@ link() {
 }
 
 link "$REPO_DIR/.claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
+link "$REPO_DIR/.claude/AGENTS.md" "$HOME/.claude/AGENTS.md"
 link "$REPO_DIR/.gitconfig" "$HOME/.gitconfig"
 link "$REPO_DIR/.zshrc" "$HOME/.zshrc"
 
