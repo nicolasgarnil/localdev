@@ -5,7 +5,7 @@ Personal local development configuration, versioned so it can be reproduced on a
 ## Contents
 
 - `.claude/statusline-command.sh` - Claude Code status line script; prints the model name and total token usage (e.g. `Opus 4.8 · 10.2k`), turning the token count yellow past ~100k where context length starts to degrade model precision.
-- `CLAUDE.md` - global Claude Code entrypoint linked to `~/.claude/CLAUDE.md`; imports the guidelines via `@AGENTS.md`.
+- `.claude/CLAUDE.md` - global Claude Code entrypoint linked to `~/.claude/CLAUDE.md`; imports the guidelines via `@~/.claude/AGENTS.md` (absolute so the import resolves the same whether loaded as user or project instructions).
 - `AGENTS.md` - global Claude Code guidelines applied across all projects; `install.sh` links it to `~/.claude/AGENTS.md`.
 - `install.sh` - symlinks the versioned config files into their expected locations under `$HOME`, then prompts for the Git user name and email; idempotent, safe to re-run.
 - `.gitconfig` - shared Git configuration (aliases, colors, defaults). Git identity is not versioned here: this file includes `~/.gitconfig.local`, which `install.sh` populates per machine.
