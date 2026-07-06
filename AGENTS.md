@@ -1,6 +1,8 @@
 # General Guidelines
 
-* Never use the em dash "—". Use plain dash "-" instead
+* Never use dashes of any kind as sentence punctuation: not the em dash "—", the en dash "–", nor the plain hyphen "-".
+  Rewrite the sentence instead (use commas, parentheses, colons, or separate sentences).
+  Hyphens remain fine in compound words (e.g. "long-term"), code, and Markdown list markers.
 * When writing commit messages, NEVER auto-ad your agent name as co-author
 * Never manually modify CHANGELOG.MD files or any files that are marked as auto-generated
 * When writing or substantially editing long Markdown files, put each full sentence onto one physical line.
